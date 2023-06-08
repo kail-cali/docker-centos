@@ -5,13 +5,11 @@
 ## build
 
 ```shell
-docker build -t hail/centos:7.1 ./base1
+docker build -t centos/base:7.1  ./base1
+
 ```
 
 ## IMPOTANT RUN IS A LITTLE TRICKY
-
-I will explain why all options is needed
-bello is base run option for cent os :7
 
 ```shell
 docker run \
@@ -22,10 +20,10 @@ docker run \
     --tmpfs /tmp:exec \
     --tmpfs /run \
     --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-    --volume dev_vol1:/home/hail \
+    --volume dev_vol1:/home/dev \
     --name dev_centos \
     --hostname localhost \
-        hail/centos:7.1
+        centos/base:7.1
 ```
 
 - first, tmpfs is kinds of mound volume inside dockerfile,
@@ -48,17 +46,16 @@ docker run \
     --tmpfs /tmp:exec \
     --tmpfs /run \
     --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-    --volume dev_vol1:/home/hail \
     --name dev_centos_ins \
     --hostname localhost \
-        hail/centos:7.1
+        centos/base:7.1
 ```
 
 
 
 
 
-## Dockerfile guide
+## Dockerfile Tip
 
 - docker centos have some major & minor issue
 - couldn't use CMD at last entry point, it is related with [init] and bash
