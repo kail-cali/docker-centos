@@ -17,12 +17,12 @@ CMD ["/usr/sbin/init"]
 RUN yum update -y \
     && yum install -y centos-release-scl libaio gdb 
 
-WORKDIR /home/hail
+WORKDIR /home/dev
 
-COPY src/ /home/hail
+COPY src/ /home/dev
 
 ENV SOME_HOME=/dev \ 
-    && SOME_PORT=88 \
-    && SOME_PATH=/dev 
+    SOME_PORT=88 \
+    SOME_PATH=/dev 
 
 
