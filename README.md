@@ -1,5 +1,8 @@
 # Base cent os:7
 
+> 1) base1 : base docker centos
+> 2) basejdk: docker centos wtih jdk-17
+
 
 
 ## Build base image from `Dockerfile`
